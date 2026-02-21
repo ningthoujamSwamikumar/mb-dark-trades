@@ -1,4 +1,6 @@
 use anchor_lang::prelude::*;
 
 #[constant]
-pub const SEED: &str = "anchor";
+pub const DARK_CONFIG_SEEDS: &[u8] = b"dark_trades_config";
+
+pub const ANCHOR_DISCRIMINATOR: usize = 8;
