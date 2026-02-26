@@ -58,4 +58,8 @@ pub mod mb_dark_trades {
     pub fn settle_and_undelegate(ctx: Context<SettleAndUndelegate>) -> Result<()> {
         ctx.accounts.handler()
     }
+
+    pub fn withdraw(ctx: Context<Withdraw>, id: u64, intent_side: u8) -> Result<()> {
+        ctx.accounts.handler(id, intent_side)
+    }
 }

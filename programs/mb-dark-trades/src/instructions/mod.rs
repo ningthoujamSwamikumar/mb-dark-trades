@@ -4,12 +4,14 @@ pub mod initialize;
 pub mod match_orders;
 pub mod place_intent;
 pub mod settle_and_undelegate;
+pub mod withdraw;
 
 pub use create_permission::*;
 pub use delegate_pda::*;
 pub use match_orders::*;
 pub use place_intent::*;
 pub use settle_and_undelegate::*;
+pub use withdraw::*;
 
 use anchor_lang::prelude::*;
 
