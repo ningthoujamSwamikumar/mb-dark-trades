@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 use anchor_spl::token::{Mint, Token, TokenAccount};
 
-use crate::{DEPOSIT_ACCOUNT_SEEDS, DepositAccount, INTENT_ACCOUNT_SEEDS, IntentAccount, USDC_MINT, error::DarkTradeErrors};
+use crate::{DEPOSIT_ACCOUNT_SEEDS, DepositAccount, INTENT_ACCOUNT_SEEDS, IntentAccount, error::DarkTradeErrors};
 
 #[derive(Accounts)]
 #[instruction(id: u64, intent_side: u8)]
@@ -21,7 +21,6 @@ pub struct Withdraw<'info> {
     )]
     pub receiver_usdc: Account<'info, TokenAccount>,
     // usdc mint
-    #[account(address = USDC_MINT)]
     pub usdc_mint: Account<'info, Mint>,
     // deposit account
     #[account(

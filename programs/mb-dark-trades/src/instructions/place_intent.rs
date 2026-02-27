@@ -9,7 +9,7 @@ use anchor_spl::{
 
 use crate::{
     DepositAccount, IntentAccount, ANCHOR_DISCRIMINATOR, DEPOSIT_ACCOUNT_SEEDS,
-    INTENT_ACCOUNT_SEEDS, USDC_MINT,
+    INTENT_ACCOUNT_SEEDS,
 };
 
 #[derive(Accounts)]
@@ -18,7 +18,6 @@ pub struct PlaceIntent<'info> {
     #[account(mut)]
     pub user: Signer<'info>,
 
-    #[account(address = USDC_MINT)]
     pub usdc_mint: Account<'info, Mint>,
 
     #[account(

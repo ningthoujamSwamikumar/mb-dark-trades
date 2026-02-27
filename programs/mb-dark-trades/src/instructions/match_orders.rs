@@ -2,8 +2,7 @@ use anchor_lang::prelude::{program_pack::Pack, *};
 use anchor_spl::token::{spl_token::state::Account as RawTokenAccount, Mint, Token, TokenAccount};
 
 use crate::{
-    error::DarkTradeErrors, DepositAccount, IntentAccount, DEPOSIT_ACCOUNT_SEEDS, MATCHER_PUBKEY,
-    USDC_MINT,
+    error::DarkTradeErrors, DepositAccount, IntentAccount, DEPOSIT_ACCOUNT_SEEDS, MATCHER_PUBKEY
 };
 
 #[derive(Accounts)]
@@ -13,7 +12,6 @@ pub struct MatchOrders<'info> {
     #[account(signer, address = MATCHER_PUBKEY)]
     pub matcher: Signer<'info>,
 
-    #[account(address = USDC_MINT)]
     pub usdc_mint: Account<'info, Mint>,
 
     pub seller: SystemAccount<'info>,
