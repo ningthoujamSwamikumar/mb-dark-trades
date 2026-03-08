@@ -21,12 +21,12 @@ pub mod mb_dark_trades {
 
     pub fn place_intent(
         ctx: Context<PlaceIntent>,
+        id: u64,
+        intent_side: u8,
         deposit_amount: u64,
         quantity: u64,
         limit_price: u64,
         expiry: i64,
-        id: u64,
-        intent_side: u8,
     ) -> Result<()> {
         ctx.accounts.handler(
             id,
